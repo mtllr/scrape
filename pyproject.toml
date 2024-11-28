@@ -1,0 +1,32 @@
+[project]
+name = "scrape"
+version = "0.1.0"
+description = "collection of cli launchable scrapers to extract data from specific data sources."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.1.7",
+    "dateparser>=1.2.0",
+    "httpx>=0.27.2",
+    "pandas>=2.2.3",
+    "parsel>=1.9.1",
+    "pydantic>=2.10.0",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.3",
+    "tqdm>=4.67.0",
+]
+authors = [
+    {name="Martin Teller", email="martin@l1nx.it"}
+]
+
+license = { file = "LICENCE.md" }
+
+[dependency-groups]
+dev = [
+    "pytest-cov>=6.0.0",
+    "pytest>=8.3.3",
+    "readmeai>=0.5.99.post5",
+]
+
+[project.scripts]
+scrape = "cli:cli"
