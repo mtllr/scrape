@@ -39,6 +39,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v3
       - name: Install windows unicode support
-        run: uv pip install win-unicode-console
+        run: uv add win-unicode-console
       - name: Run Tests
         run: uv run pytest
