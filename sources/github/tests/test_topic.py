@@ -1,7 +1,7 @@
 import pytest
 from pathlib import Path
 from models import ScrapeModel
-from github.topic import run, GithubTopicModel
+from sources.github.topic import run, GithubTopicModel
 from click.testing import CliRunner
 
 
