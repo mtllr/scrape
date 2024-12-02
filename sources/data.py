@@ -1,11 +1,12 @@
-import click
 import json
-import click.testing
-import pandas as pd
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
-from datetime import datetime
+
+import click
+import click.testing
+import pandas as pd
 
 
 class AbstractFileHandler:
@@ -106,7 +107,9 @@ class AbstractFileHandler:
         else:  # make new file from old file name
             assert self._meta, "No metadata associated to the file"
             suffixes = ".".join(self.filepath.suffixes)  # type: ignore
-            new_suffixes = ".".join([f".{self.__class__._mime}", *self.filepath.suffixes[1:]])  # type: ignore
+            new_suffixes = ".".join(
+                [f".{self.__class__._mime}", *self.filepath.suffixes[1:]]
+            )  # type: ignore
             res = str(
                 Path(fdir).absolute()
                 / f"{str(self.filepath)[:-len(suffixes)]}{new_suffixes}"
@@ -134,7 +137,6 @@ class StdOutFileHandler(AbstractFileHandler): ...
 
 
 class CSVFileHandler(AbstractFileHandler):
-
     _mime = "csv"
 
     # def __init__(
@@ -187,7 +189,6 @@ class CSVFileHandler(AbstractFileHandler):
 
 
 class JSONFileHandler(AbstractFileHandler):
-
     _mime = "json"
     # def __init__(
     #     self, filepath: None | str | Path = None, data: Any = None, uuid: bool = False
