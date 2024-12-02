@@ -13,8 +13,11 @@ class ScrapeModel(BaseModel, Generic[DataT]):
         description="The list of arguments used to call the script. To make script calls uniquely identifiable",
     )
     url: str = Field(
-        default_factory=lambda: datetime.now().isoformat(timespec="seconds"),
+        ...,
         description="The scraped url",
     )
-    timestamp: str = Field(..., description="The timestamp when the data was scraped")
+    timestamp: str = Field(
+        default_factory=lambda: datetime.now().isoformat(timespec="seconds"),
+        description="The timestamp when the data was scraped",
+    )
     data: Optional[DataT] = Field(None, description="The scraped contents")

@@ -11,7 +11,6 @@ from parsel import Selector
 from tqdm import tqdm
 from pydantic import BaseModel, Field
 from typing import Optional, List
-import dateparser
 
 from models import ScrapeModel
 
