@@ -16,7 +16,7 @@
 </p>
 <br>
 
-##  Table of Contents
+## Table of Contents
 
 - [ Overview](#-overview)
 - [ Features](#-features)
@@ -34,28 +34,32 @@
 
 ---
 
-##  Overview
+## Overview
 
-The "scrape" project is a powerful tool designed to simplify web data extraction, particularly from GitHub topics. It addresses the challenge of gathering structured data efficiently, offering a user-friendly command-line interface for seamless operation. Ideal for developers and data analysts, it ensures consistent data collection, ready for analysis or integration.
+The "scrape" project is a powerful tool designed to simplify web data
+extraction, particularly from GitHub topics. It addresses the challenge of
+gathering structured data efficiently, offering a user-friendly command-line
+interface for seamless operation. Ideal for developers and data analysts, it
+ensures consistent data collection, ready for analysis or integration.
 
 ---
 
-##  Features
+## Features
 
-|      | Feature         | Summary       |
-| :--- | :---:           | :---          |
+|     |      Feature      | Summary                                                                                                                                                                                                                                                                                                                                                                                                       |
+| :-- | :---------------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ⚙️  | **Architecture**  | <ul><li>Utilizes a modular architecture with components like `models.py`, `cli.py`, and `github/topic.py` to separate concerns and enhance maintainability.</li><li>Command-line interface (CLI) driven, leveraging the `Click` library for user interaction and command management.</li><li>Designed for web scraping tasks, with a focus on extracting and processing data from specific sources.</li></ul> |
-| 🔩 | **Code Quality**  | <ul><li>Adopts a standardized data model in `models.py` to ensure consistency across scraped data.</li><li>Code organization facilitates easy integration and extension, supporting scalability.</li><li>Emphasizes clear separation of logic, enhancing readability and maintainability.</li></ul> |
-| 📄 | **Documentation** | <ul><li>Primary language is Python, with a focus on CLI tools as outlined in `pyproject.toml`.</li><li>Documentation is inferred from file contents, detailing the purpose and functionality of each module.</li><li>Lacks explicit install, usage, and test commands, indicating potential areas for improvement in user guidance.</li></ul> |
-| 🔌 | **Integrations**  | <ul><li>Integrates with GitHub for data extraction, as seen in `github/topic.py`.</li><li>Utilizes libraries like `httpx` and `requests` for HTTP requests and data fetching.</li><li>Supports environment management through `python-dotenv`.</li></ul> |
-| 🧩 | **Modularity**    | <ul><li>Components like `cli.py` and `__main__.py` facilitate modular command execution.</li><li>Data models and scraping logic are encapsulated in separate modules, promoting reusability.</li><li>CLI entry points are defined in `pyproject.toml`, supporting modular expansion.</li></ul> |
-| 🧪 | **Testing**       | <ul><li>Testing commands are not explicitly documented, suggesting a need for improved test coverage.</li><li>Potential for unit tests on data models and CLI functionalities to ensure robustness.</li><li>Integration tests could validate end-to-end data extraction and processing workflows.</li></ul> |
-| ⚡️  | **Performance**   | <ul><li>Efficient data extraction using `httpx` and `requests` for asynchronous HTTP requests.</li><li>Data processing is streamlined through libraries like `pandas` for handling large datasets.</li><li>Performance optimizations could be explored in data parsing and storage mechanisms.</li></ul> |
-| 🛡️ | **Security**      | <ul><li>Environment variables managed through `python-dotenv` to secure sensitive information.</li><li>Security practices around data handling and storage need further elaboration.</li><li>Potential for implementing security audits on dependencies and data flows.</li></ul> |
+| 🔩  | **Code Quality**  | <ul><li>Adopts a standardized data model in `models.py` to ensure consistency across scraped data.</li><li>Code organization facilitates easy integration and extension, supporting scalability.</li><li>Emphasizes clear separation of logic, enhancing readability and maintainability.</li></ul>                                                                                                           |
+| 📄  | **Documentation** | <ul><li>Primary language is Python, with a focus on CLI tools as outlined in `pyproject.toml`.</li><li>Documentation is inferred from file contents, detailing the purpose and functionality of each module.</li><li>Lacks explicit install, usage, and test commands, indicating potential areas for improvement in user guidance.</li></ul>                                                                 |
+| 🔌  | **Integrations**  | <ul><li>Integrates with GitHub for data extraction, as seen in `github/topic.py`.</li><li>Utilizes libraries like `httpx` and `requests` for HTTP requests and data fetching.</li><li>Supports environment management through `python-dotenv`.</li></ul>                                                                                                                                                      |
+| 🧩  |  **Modularity**   | <ul><li>Components like `cli.py` and `__main__.py` facilitate modular command execution.</li><li>Data models and scraping logic are encapsulated in separate modules, promoting reusability.</li><li>CLI entry points are defined in `pyproject.toml`, supporting modular expansion.</li></ul>                                                                                                                |
+| 🧪  |    **Testing**    | <ul><li>Testing commands are not explicitly documented, suggesting a need for improved test coverage.</li><li>Potential for unit tests on data models and CLI functionalities to ensure robustness.</li><li>Integration tests could validate end-to-end data extraction and processing workflows.</li></ul>                                                                                                   |
+| ⚡️ |  **Performance**  | <ul><li>Efficient data extraction using `httpx` and `requests` for asynchronous HTTP requests.</li><li>Data processing is streamlined through libraries like `pandas` for handling large datasets.</li><li>Performance optimizations could be explored in data parsing and storage mechanisms.</li></ul>                                                                                                      |
+| 🛡️  |   **Security**    | <ul><li>Environment variables managed through `python-dotenv` to secure sensitive information.</li><li>Security practices around data handling and storage need further elaboration.</li><li>Potential for implementing security audits on dependencies and data flows.</li></ul>                                                                                                                             |
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```sh
 └── /
@@ -79,8 +83,8 @@ The "scrape" project is a powerful tool designed to simplify web data extraction
     └── uv.lock
 ```
 
+### Project Index
 
-###  Project Index
 <details open>
 	<summary><b><code>/</code></b></summary>
 	<details> <!-- __root__ Submodule -->
@@ -120,69 +124,77 @@ The "scrape" project is a powerful tool designed to simplify web data extraction
 </details>
 
 ---
-##  Getting Started
 
-###  Prerequisites
+## Getting Started
 
-Before getting started with , ensure your runtime environment meets the following requirements:
+### Prerequisites
+
+Before getting started with , ensure your runtime environment meets the
+following requirements:
 
 - **Programming Language:** Python
 
+### Installation
 
-###  Installation
-
-Install  using one of the following methods:
+Install using one of the following methods:
 
 **Build from source:**
 
-1. Clone the  repository:
+1. Clone the repository:
+
 ```sh
 ❯ git clone ../
 ```
 
 2. Navigate to the project directory:
+
 ```sh
-❯ cd 
+❯ cd
 ```
 
 3. Install the project dependencies:
 
 echo 'INSERT-INSTALL-COMMAND-HERE'
 
+### Usage
 
+Run using the following command: echo 'INSERT-RUN-COMMAND-HERE'
 
-###  Usage
-Run  using the following command:
-echo 'INSERT-RUN-COMMAND-HERE'
+### Testing
 
-###  Testing
-Run the test suite using the following command:
-echo 'INSERT-TEST-COMMAND-HERE'
+Run the test suite using the following command: echo 'INSERT-TEST-COMMAND-HERE'
 
 ---
-##  Project Roadmap
 
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
+## Project Roadmap
+
+- [x] **`Task 1`**: <strike>Implement feature one.</strike>
 - [ ] **`Task 2`**: Implement feature two.
 - [ ] **`Task 3`**: Implement feature three.
 
 ---
 
-##  Contributing
+## Contributing
 
-- **💬 [Join the Discussions](https://LOCAL///discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://LOCAL///issues)**: Submit bugs found or log feature requests for the `` project.
-- **💡 [Submit Pull Requests](https://LOCAL///blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
+- **💬 [Join the Discussions](https://LOCAL///discussions)**: Share your
+  insights, provide feedback, or ask questions.
+- **🐛 [Report Issues](https://LOCAL///issues)**: Submit bugs found or log
+  feature requests for the `` project.
+- **💡 [Submit Pull Requests](https://LOCAL///blob/main/CONTRIBUTING.md)**:
+  Review open PRs, and submit your own PRs.
 
 <details closed>
 <summary>Contributing Guidelines</summary>
 
-1. **Fork the Repository**: Start by forking the project repository to your LOCAL account.
-2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
+1. **Fork the Repository**: Start by forking the project repository to your
+   LOCAL account.
+2. **Clone Locally**: Clone the forked repository to your local machine using a
+   git client.
    ```sh
    git clone .
    ```
-3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
+3. **Create a New Branch**: Always work on a new branch, giving it a descriptive
+   name.
    ```sh
    git checkout -b new-feature-x
    ```
@@ -195,8 +207,10 @@ echo 'INSERT-TEST-COMMAND-HERE'
    ```sh
    git push origin new-feature-x
    ```
-7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
-8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
+7. **Submit a Pull Request**: Create a PR against the original project
+   repository. Clearly describe the changes and their motivations.
+8. **Review**: Once your PR is reviewed and approved, it will be merged into the
+main branch. Congratulations on your contribution!
 </details>
 
 <details closed>
@@ -211,13 +225,15 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 ---
 
-##  License
+## License
 
-This project is protected under the [SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+This project is protected under the
+[SELECT-A-LICENSE](https://choosealicense.com/licenses) License. For more
+details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
 
 ---
 
-##  Acknowledgments
+## Acknowledgments
 
 - List any resources, contributors, inspiration, etc. here.
 

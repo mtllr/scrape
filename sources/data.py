@@ -108,8 +108,8 @@ class AbstractFileHandler:
             assert self._meta, "No metadata associated to the file"
             suffixes = ".".join(self.filepath.suffixes)  # type: ignore
             new_suffixes = ".".join(
-                [f".{self.__class__._mime}", *self.filepath.suffixes[1:]]
-            )  # type: ignore
+                [f".{self.__class__._mime}", *self.filepath.suffixes[1:]]  # type: ignore
+            )
             res = str(
                 Path(fdir).absolute()
                 / f"{str(self.filepath)[:-len(suffixes)]}{new_suffixes}"
