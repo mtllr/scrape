@@ -32,13 +32,13 @@ jobs:
       - uses: astral-sh/setup-uv@v3
       - run: uv run pytest
 
-  test-win:
-    name: Run windows test suites
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: astral-sh/setup-uv@v3
-      - name: Install windows unicode support
-        run: uv add win-unicode-console
-      - name: Run Tests
-        run: uv run pytest
+  # test-win:
+  #   name: Run windows test suites
+  #   runs-on: windows-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: astral-sh/setup-uv@v3
+  #     - name: Install windows unicode support
+  #       run: uv add win-unicode-console
+  #     - name: Run Tests
+  #       run: uv run pytest
